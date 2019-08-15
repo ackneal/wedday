@@ -80,6 +80,7 @@ h3.w-card-msg__quote:after {
   top:50%;
   left: 50%;
   width: 80%;
+  max-width: 900px;
   transform: translate(-50%, -50%);
 }
 
