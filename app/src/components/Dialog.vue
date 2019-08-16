@@ -30,6 +30,7 @@
 
 <script>
 
+import dialogPolyfill from 'dialog-polyfill'
 import ImageInput from './Image-Input.vue'
 
 export default {
@@ -52,6 +53,7 @@ export default {
   }),
   methods: {
     open() {
+      dialogPolyfill.registerDialog(this.dialog);
       this.dialog.showModal();
     },
     submit() {
