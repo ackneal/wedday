@@ -196,6 +196,7 @@ button.w-open-button {
 }
 
 .wedday .mdl-card__media ~ .mdl-card__supporting-text {
+  padding: 10px;
   min-height: 64px;
 }
 
