@@ -8,8 +8,9 @@
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
       <div class="w-avatar"><span>{{ author.displayname.slice(0, 2).toUpperCase() }}</span></div>
       <div>
-        <strong>{{ author.displayname }}</strong>
-        <span>{{ publishedAt }}</span>
+        <strong>
+          {{ author.displayname }} 在 <span>{{ publishedAt }}</span>寫下了祝福...
+        </strong>
       </div>
     </div>
   </div>
