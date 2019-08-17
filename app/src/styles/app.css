@@ -88,6 +88,18 @@ h3.w-card-msg__quote:after {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .w-dialog .w-input-image > img {
+    max-height: 45vh;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .w-dialog .w-input-image > img {
+    max-height: 35vh;
+  }
+}
+
 .w-dialog .mdl-dialog {
   top:50%;
   left: 50%;
@@ -110,6 +122,8 @@ h3.w-card-msg__quote:after {
 }
 
 .w-dialog .w-input-image > img {
+  object-fit: cover;
+  max-height: 50vh;
   width: 100%;
   height: auto;
   border-radius: 15px;
