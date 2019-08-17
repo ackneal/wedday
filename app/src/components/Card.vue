@@ -6,7 +6,7 @@
       <h3 v-else class="w-card-msg__quote">{{ message }}</h3>
     </div>
     <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-      <img :src="author.avatar" class="w-card-avatar">
+      <div class="w-avatar"><span>{{ author.displayname.slice(0, 2).toUpperCase() }}</span></div>
       <div>
         <strong>{{ author.displayname }}</strong>
         <span>{{ publishedAt }}</span>
