@@ -1,4 +1,5 @@
 @import '~dialog-polyfill/dialog-polyfill.css';
+@import '~material-design-lite/material.css';
 
 body::before {
   background-size: cover;
