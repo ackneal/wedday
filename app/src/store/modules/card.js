@@ -6,6 +6,19 @@ const client = {
       .then(callback)
       .catch(errCallback)
   },
+  store: function (data, callback, errCallback) {
+    var formData = new FormData()
+    formData.set('name', data.name)
+    formData.set('message', data.message)
+    formData.set('image', data.image)
+
+    return fetch('http://localhost:8081/api/cards', {
+      method: 'POST',
+      body: formData
+    }).then(res => { return res.json() })
+    .then(callback)
+    .catch(errCallback)
+  },
 }
 
 const state = {
@@ -31,11 +44,19 @@ const actions = {
         return false
       })
   },
+  create({ commit }, data) {
+    client.store(data, res => {
+      commit('prepend', [ res.data ]);
+    })
+  },
 }
 
 const mutations = {
   append(state, cards) {
     state.list.push(...cards);
+  },
+  prepend(state, cards) {
+    state.list.unshift(...cards);
   },
 }
 

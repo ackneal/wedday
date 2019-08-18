@@ -30,6 +30,7 @@
 
 <script>
 
+import { mapActions } from 'vuex'
 import dialogPolyfill from 'dialog-polyfill'
 import ImageInput from './Image-Input.vue'
 
@@ -52,6 +53,7 @@ export default {
     invalidImage: false,
   }),
   methods: {
+    ...mapActions(['card/create']),
     open() {
       dialogPolyfill.registerDialog(this.dialog);
       this.dialog.showModal();
@@ -73,7 +75,13 @@ export default {
         return
       }
 
-      return this.create()
+      return this['card/create']({
+        name: this.name.value,
+        message: this.message.value,
+        image: this.image
+      }).then(res => {
+        this.close()
+      })
     },
     close() {
       this.dialog.close()
@@ -90,19 +98,6 @@ export default {
     },
     show(data) {
       this.notification.MaterialSnackbar.showSnackbar(data)
-    },
-    create() {
-      var formData = new FormData();
-      formData.set('name', this.name.value)
-      formData.set('message', this.message.value)
-      formData.set('image', this.image)
-
-      fetch('/api/posts', {
-        method: 'POST',
-        body: formData
-      }).then(function (response) {
-         console.log(response)
-      });
     },
   },
   mounted() {
