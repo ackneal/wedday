@@ -162,7 +162,7 @@ button.w-open-button {
 .wedday .mdl-card__media {
   box-sizing: border-box;
   background-size: cover;
-  background-color: white;
+  background-color: #263238;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
