@@ -59,17 +59,9 @@ export default {
       this.dialog.showModal();
     },
     submit() {
-      if (!this.name.value) {
-        this.name.invalid = true
-      }
-
-      if (!this.message.value) {
-        this.message.invalid = true
-      }
-
-      if (!this.image) {
-        this.invalidImage = true
-      }
+      this.name.invalid = !this.name.value
+      this.message.invalid = !this.message.value
+      this.invalidImage = !this.image
 
       if (this.name.invalid || this.message.invalid || this.invalidImage) {
         return
