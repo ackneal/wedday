@@ -28,6 +28,11 @@ body .wedday {
   flex-shrink: 0;
 }
 
+.wedday .w-loading {
+  margin: 20px;
+  text-align: center;
+}
+
 .w-headline {
   background-image: url('../assets/headline.jpg');
 }
