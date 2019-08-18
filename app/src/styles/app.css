@@ -54,6 +54,7 @@ body .wedday {
   position: absolute;
   margin: 10px 0;
   padding: 20px;
+  text-shadow: #263238 0.1em 0.1em 0.2em;
 }
 
 h3.w-card-msg__quote {
