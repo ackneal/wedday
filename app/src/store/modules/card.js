@@ -19,7 +19,7 @@ const getters = {
 const actions = {
   getMany({ commit, state }) {
     var query = {
-      start: state.list.length,
+      offset: state.list.length,
       limit: 8
     }
     return client.index(query,
