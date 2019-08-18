@@ -1,7 +1,7 @@
 <template>
   <div class="mdl-card mdl-cell mdl-cell--6-col">
     <div class="mdl-card__media mdl-color-text--grey-50">
-      <img v-show="image" class="w-card-img" :src="image">
+      <img v-show="image" class="w-card-img" :src="imageUrl">
       <h4 v-if="image" class="w-card-msg">{{ message }}</h4>
       <h3 v-else class="w-card-msg__quote">{{ message }}</h3>
     </div>
@@ -39,6 +39,9 @@ export default {
       }
 
       return new Date(this.created_at * 1000).toTimeString().slice(0, 5) + ' '
+    },
+    imageUrl: function () {
+      return (this.image) ? `https://storage.googleapis.com/wedday/${this.image}` : '';
     },
   },
 }
