@@ -96,9 +96,6 @@ export default {
       this.image = null
       this.invalidImage = false
     },
-    show(data) {
-      this.notification.MaterialSnackbar.showSnackbar(data)
-    },
   },
   mounted() {
     this.dialog = this.$refs.dialog;
