@@ -6,6 +6,7 @@ body::before {
   background-size: cover;
   background-image: url('../assets/bg.jpg');
   background-attachment: fixed;
+  opacity:0.7;
   content: '';
   will-change: transform;
   z-index: -1;
