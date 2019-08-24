@@ -45,8 +45,9 @@ const actions = {
       })
   },
   create({ commit }, data) {
-    client.store(data, res => {
+    return client.store(data, res => {
       commit('prepend', [ res.data ]);
+      return res.data
     })
   },
 }
