@@ -262,3 +262,34 @@ button.w-open-button {
 .mdl-grid {
   display: flex !important;
 }
+
+.swiper-container {
+  width: 100wh;
+  height: 100vh;
+  background-color: black;
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+.swiper-slide .swiper-img {
+  height: auto;
+  width: 70%;
+  object-fit: contain;
+}
+
+.swiper-slide .swiper-message {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  max-width: 30%;
+  margin: 50px;
+  word-break: break-all;
+  text-shadow: #263238 0.1em 0.1em 0.2em;
+  color: white;
+}
+
+.swiper-slide .swiper-message h4 {
+  text-align: right;
+}
