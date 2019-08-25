@@ -1,3 +1,6 @@
-import wedday
+from wedday import create_app
 
-app = wedday.create_app()
+app = create_app()
+
+if __name__ == '__main__':
+    socketio.run(app)
