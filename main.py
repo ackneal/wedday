@@ -1,4 +1,4 @@
-from wedday import create_app
+from wedday import create_app, socketio
 
 app = create_app()
 
