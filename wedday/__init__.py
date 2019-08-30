@@ -8,7 +8,7 @@ def create_app():
 
     from . import websocket
     app.register_blueprint(websocket.bp)
-    socketio.init_app(app)
+    socketio.init_app(app, cors_allowed_origins='*')
 
     @app.route('/')
     @app.route('/slide')
