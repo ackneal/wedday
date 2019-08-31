@@ -1,4 +1,4 @@
 module.exports = {
-  outputDir: './../wedday/templates',
+  outputDir: './../wedding/templates',
   assetsDir: '../static'
 }
