@@ -101,11 +101,22 @@ h3.w-card-msg__quote:after {
 }
 
 .w-dialog .mdl-dialog {
+  display:flex;
+  align-items:center;
+  justify-content:center;
   top:50%;
   left: 50%;
   width: 80%;
   max-width: 900px;
   transform: translate(-50%, -50%);
+}
+
+dialog:not([open]) {
+  display: none !important;
+}
+
+.w-dialog .mdl-dialog > div {
+  width: 100%;
 }
 
 .w-dialog .w-input-image {
