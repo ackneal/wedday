@@ -11,5 +11,5 @@ def getallphoto():
     cards = Cards.query.order_by(Cards.id.desc()).all()
     result = []
     for card in cards:
-        result.append(card.__jsonencode__())
+        result.append(card.to_dict())
     return jsonify(result)
