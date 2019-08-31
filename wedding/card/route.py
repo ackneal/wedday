@@ -8,7 +8,18 @@ bp = Blueprint('route', __name__, url_prefix = '/api')
 
 @bp.route('/cards')
 def getallphoto():
-    cards = Cards.query.order_by(Cards.id.desc()).all()
+    limit = request.args.get('limit', 0)
+    offset = request.args.get('offset', 0)
+
+    try:
+        offset = int(offset)
+        limit = int(limit)
+        if 0 == limit:
+            return jsonify({'error': True, 'message': 'limit 不行是 0'}), 400
+    except ValueError:
+        return jsonify({'error': True, 'message': 'limt & offset need to be integer'}), 400
+
+    cards = Cards.query.order_by(Cards.id.desc()).limit(limit).offset(offset)
     result = []
     for card in cards:
         result.append(card.to_dict())
