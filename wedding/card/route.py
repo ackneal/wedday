@@ -19,8 +19,15 @@ def getallphoto():
     except ValueError:
         return jsonify({'error': True, 'message': 'limt & offset need to be integer'}), 400
 
-    cards = Cards.query.order_by(Cards.id.desc()).limit(limit).offset(offset)
+    cards = Cards.query.order_by(Cards.id.desc()).limit(limit + 1).offset(offset)
     result = []
-    for card in cards:
+    has_more = False
+
+    for index, card in enumerate(cards):
+        if index == (limit):
+            has_more = True
+            break;
+
         result.append(card.to_dict())
-    return jsonify(result)
+
+    return jsonify({'data': result, 'has_more': has_more})
