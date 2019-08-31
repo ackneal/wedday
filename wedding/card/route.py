@@ -31,3 +31,27 @@ def getallphoto():
         result.append(card.to_dict())
 
     return jsonify({'data': result, 'has_more': has_more})
+
+# 抽獎, 依 limit 決定抽幾個
+@bp.route('/card', methods = ['GET'])
+def randomCard():
+    limit = request.args.get('limit', 0)
+
+    try:
+        limit = int(limit)
+        if limit <= 0:
+            return jsonify({'error': True, 'message': '參數不正確'}), 400
+    except ValueError:
+        return jsonify({'error': True, 'message': '參數不正確'}), 400
+
+    cards = Cards.query.filter_by(status=0).order_by(func.rand()).limit(limit).all()
+
+    result = []
+    for card in cards:
+        # 更新 status
+        card.status = 1
+        db.session.commit()
+
+        result.append(card.to_dict())
+
+    return jsonify({'data': result})
