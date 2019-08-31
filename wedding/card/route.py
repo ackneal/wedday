@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, request, make_response, jsonify
 from sqlalchemy.sql.expression import func
 from .card import Cards
-from .functions import valid_param
+from ..functions import valid_param
 from .. import db
 
 bp = Blueprint('route', __name__, url_prefix = '/api')
