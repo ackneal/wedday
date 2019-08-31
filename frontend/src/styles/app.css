@@ -81,7 +81,7 @@ h3.w-card-msg__quote:after {
 
 @media only screen and (max-width: 767px) {
   .w-dialog .mdl-dialog {
-    position: fixed;
+    padding: 50px 0;
     height: 100vh;
     width: 100vw !important;
     overflow-y: auto;
@@ -100,15 +100,17 @@ h3.w-card-msg__quote:after {
   }
 }
 
+.w-dialog {
+  position: fixed;
+}
+
 .w-dialog .mdl-dialog {
+  top: 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  top:50%;
-  left: 50%;
   width: 80%;
   max-width: 900px;
-  transform: translate(-50%, -50%);
 }
 
 dialog:not([open]) {
