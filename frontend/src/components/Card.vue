@@ -41,7 +41,7 @@ export default {
       return new Date(this.created_at * 1000).toTimeString().slice(0, 5) + ' '
     },
     imageUrl: function () {
-      return (this.image) ? `https://storage.googleapis.com/wedday/${this.image}` : '';
+      return (this.image) ? `https://storage.googleapis.com/cosmos-369.appspot.com/${this.image}` : '';
     },
   },
 }
