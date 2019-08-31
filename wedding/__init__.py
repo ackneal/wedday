@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
@@ -8,8 +10,12 @@ socketio = SocketIO()
 def create_app():
     app = Flask(__name__)
 
+    db_uri = os.getenv('SQLALCHEMY_DATABASE_URI')
+    if db_uri is None:
+        db_uri = 'mysql://wedday:weddaysecret@127.0.0.1:3307/wedday'
+
     app.config.from_mapping(
-        SQLALCHEMY_DATABASE_URI = 'mysql://wedday:weddaysecret@127.0.0.1:3307/wedday',
+        SQLALCHEMY_DATABASE_URI = db_uri,
         SQLALCHEMY_TRACK_MODIFICATIONS = False
     )
 

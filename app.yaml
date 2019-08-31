@@ -9,5 +9,9 @@ runtime_config:
 manual_scaling:
   instances: 1
 
+env_variables:
+  SQLALCHEMY_DATABASE_URI: >-
+      mysql+pymysql://wedday:weedaysecret@/wedday?unix_socket=/cloudsql/cosmos-369:asia-east1:wedday-db
+
 network:
   session_affinity: true
