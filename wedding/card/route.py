@@ -8,7 +8,7 @@ bp = Blueprint('route', __name__, url_prefix = '/api')
 
 @bp.route('/cards')
 def getallphoto():
-    limit = request.args.get('limit', 0)
+    limit = request.args.get('limit', 8)
     offset = request.args.get('offset', 0)
 
     try:
