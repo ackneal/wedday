@@ -12,6 +12,7 @@ MarkupSafe==1.1.1
 monotonic==1.5
 mysql==0.0.2
 mysqlclient==1.4.4
+PyMySQL==0.9.3
 python-engineio==3.9.3
 python-socketio==4.3.1
 six==1.12.0
