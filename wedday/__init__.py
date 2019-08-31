@@ -20,9 +20,9 @@ def create_app():
     app.register_blueprint(card.bp)
     socketio.init_app(app, cors_allowed_origins='*')
 
-    @app.route('/')
-    @app.route('/slide')
-    def index():
+    @app.route('/', defaults={'path': ''})
+    @app.route('/<path:path>')
+    def index(path):
         return render_template('index.html')
 
     return app
