@@ -15,8 +15,9 @@ def create_app():
 
     db.init_app(app)
 
-    from . import websocket
+    from . import websocket, card
     app.register_blueprint(websocket.bp)
+    app.register_blueprint(card.bp)
     socketio.init_app(app, cors_allowed_origins='*')
 
     @app.route('/')
