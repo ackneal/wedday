@@ -1,7 +1,7 @@
 const client = {
   index: function (query, callback, errCallback) {
     var qs = require('qs');
-    return fetch('http://localhost:8081/api/cards?' + qs.stringify(query))
+    return fetch('/api/cards?' + qs.stringify(query))
       .then(res => { return res.json() })
       .then(callback)
       .catch(errCallback)
@@ -12,7 +12,7 @@ const client = {
     formData.set('message', data.message)
     formData.set('image', data.image)
 
-    return fetch('http://localhost:8081/api/cards', {
+    return fetch('/api/cards', {
       method: 'POST',
       body: formData
     }).then(res => { return res.json() })
