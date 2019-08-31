@@ -12,4 +12,4 @@ class Cards(db.Model):
         return '<Cards %r>' % self.name
 
     def to_dict(self):
-        return {'id': self.id, 'name': self.name, 'message': self.message, 'image': self.image, 'created_at': self.created_at}
+        return {'id': self.id, 'name': self.name, 'message': self.message, 'image': self.image, 'created_at': self.created_at.timestamp()}
