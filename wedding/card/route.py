@@ -45,6 +45,9 @@ def store():
 
     try:
         file_path = upload_file(image)
+        print(file_path)
+    except TypeError as error:
+        return jsonify({'error': True, 'message': format(error)}), 400
     except:
         return jsonify({'error': True, 'message': '檔案上傳失敗'}), 500
 
