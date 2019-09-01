@@ -18,7 +18,6 @@
 
 <script>
 
-import Swiper from 'swiper';
 import { mapState, mapActions } from 'vuex'
 
 export default {

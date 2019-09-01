@@ -1,6 +1,4 @@
 @import '~dialog-polyfill/dialog-polyfill.css';
-@import '~material-design-lite/material.css';
-@import '~swiper/dist/css/swiper.css';
 
 body::before {
   background-size: cover;
