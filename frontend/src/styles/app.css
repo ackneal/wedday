@@ -2,7 +2,7 @@
 
 body::before {
   background-size: cover;
-  background-image: url('../assets/bg.jpg');
+  background-image: url('https://storage.googleapis.com/cosmos-369.appspot.com/wedday/static/bg.cp.jpg');
   background-attachment: fixed;
   opacity:0.7;
   content: '';
