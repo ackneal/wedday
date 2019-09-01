@@ -43,7 +43,7 @@ export default {
       })
     },
     loadCards: function () {
-      this['card/getMany']().then((ret) => {
+      this['card/getMany'](100).then((ret) => {
         this.initialSwiper()
       })
     }

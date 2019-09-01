@@ -30,10 +30,10 @@ const getters = {
 }
 
 const actions = {
-  getMany({ commit, state }) {
+  getMany({ commit, state }, limit) {
     var query = {
       offset: state.list.length,
-      limit: 8
+      limit: limit
     }
     return client.index(query,
       (res) => {

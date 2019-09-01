@@ -40,7 +40,7 @@ export default {
     ...mapActions(['card/getMany']),
     getCards: function () {
       this.loading = true
-      this['card/getMany']().then(ret => {
+      this['card/getMany'](8).then(ret => {
         this.has_more = ret
         this.loading = false
       })
