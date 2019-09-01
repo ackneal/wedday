@@ -23,7 +23,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Slice',
   data: () => ({
-    //
+    swiper: null,
   }),
   computed: {
     ...mapState({
@@ -31,9 +31,12 @@ export default {
     })
   },
   methods: {
-    ...mapActions(['card/getMany']),
+    ...mapActions([
+      'card/getMany',
+      'card/splice',
+    ]),
     initialSwiper: function () {
-      new Swiper('.swiper-container', {
+      this.swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
@@ -50,6 +53,12 @@ export default {
   },
   mounted() {
     this.loadCards()
+    this.$socket.on('new', (msg) => {
+      const card = JSON.parse(msg)
+      this['card/splice']({ card }).then(() => {
+        this.swiper.update()
+      })
+    });
   },
 }
 </script>

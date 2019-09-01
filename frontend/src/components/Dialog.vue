@@ -76,6 +76,7 @@ export default {
         message: this.message.value,
         image: this.image
       }).then(res => {
+        this.$socket.emit('new', JSON.stringify(res))
         this.close()
       })
     },
