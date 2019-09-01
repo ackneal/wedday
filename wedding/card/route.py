@@ -1,7 +1,8 @@
 from flask import Flask, Blueprint, request, make_response, jsonify
 from sqlalchemy.sql.expression import func
+from google.cloud import storage
 from .card import Cards
-from ..functions import valid_param
+from ..functions import valid_param, upload_file
 from .. import db
 
 bp = Blueprint('route', __name__, url_prefix = '/api')
@@ -31,6 +32,27 @@ def getallphoto():
         result.append(card.to_dict())
 
     return jsonify({'data': result, 'has_more': has_more})
+
+@bp.route('/card', methods = ['POST'])
+def store():
+    image = request.files.get('image')
+    if image is None:
+        return jsonify({'error': True, 'message': '請上傳照片'}), 400
+
+    form = request.form
+    if not valid_param(form, ['message', 'name']):
+        return jsonify({'error': True, 'message': '參數不完整'}), 400
+
+    try:
+        file_path = upload_file(image)
+    except:
+        return jsonify({'error': True, 'message': '檔案上傳失敗'}), 500
+
+    card = Cards(name = form['name'], message = form['message'], image = file_path)
+    db.session.add(card)
+    db.session.commit()
+
+    return jsonify({'error': False, 'message': '上傳成功'})
 
 # 抽獎, 依 limit 決定抽幾個
 @bp.route('/card', methods = ['GET'])
