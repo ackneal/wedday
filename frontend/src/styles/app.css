@@ -98,8 +98,10 @@ h3.w-card-msg__quote:after {
   }
 }
 
-.w-dialog {
+.w-dialog > div {
   position: fixed;
+  top: 0px;
+  z-index: 9999999;
 }
 
 .w-dialog .mdl-dialog {
