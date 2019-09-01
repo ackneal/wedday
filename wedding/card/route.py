@@ -52,7 +52,7 @@ def store():
     db.session.add(card)
     db.session.commit()
 
-    return jsonify({'error': False, 'message': '上傳成功'})
+    return jsonify({'error': False, 'data': card.to_dict()})
 
 # 抽獎, 依 limit 決定抽幾個
 @bp.route('/card', methods = ['GET'])
