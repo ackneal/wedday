@@ -50,6 +50,13 @@ const actions = {
       return res.data
     })
   },
+  splice({ commit }, { card, index }) {
+    if (! index) {
+      index = state.list.length
+    }
+
+    commit('splice', { index, card })
+  },
 }
 
 const mutations = {
@@ -58,6 +65,9 @@ const mutations = {
   },
   prepend(state, cards) {
     state.list.unshift(...cards);
+  },
+  splice (state, { index, card }) {
+    state.list.splice(index, 0, card)
   },
 }
 
