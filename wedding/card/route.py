@@ -33,7 +33,7 @@ def getallphoto():
 
     return jsonify({'data': result, 'has_more': has_more})
 
-@bp.route('/card', methods = ['POST'])
+@bp.route('/cards', methods = ['POST'])
 def store():
     image = request.files.get('image')
     if image is None:
