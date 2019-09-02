@@ -4,9 +4,9 @@
       <div class="swiper-wrapper">
         <template v-for="(card, index) in cards">
           <div class="swiper-slide" :id="index">
-            <div class="swiper-message">
-              <h3 >{{ card.message }}</h3>
-              <h4>From {{ card.name }}</h4>
+            <div class="swiper-message" style="max-width: 25%;">
+              <h2 >{{ card.message }}</h2>
+              <h3>From {{ card.name }}</h3>
             </div>
             <img class="swiper-img" :src="'https://storage.googleapis.com/cosmos-369.appspot.com/' + card.image">
           </div>
