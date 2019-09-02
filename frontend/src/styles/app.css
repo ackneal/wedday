@@ -49,10 +49,13 @@ body .wedday {
 }
 
 .w-card-msg {
-  position: absolute;
-  margin: 10px 0;
-  padding: 20px;
-  text-shadow: #263238 0.1em 0.1em 0.2em;
+  font-size: 1.2em;
+  word-break: break-word;
+  margin-bottom: 5px;
+}
+
+.w-card-meta {
+  font-size: 0.9em;
 }
 
 h3.w-card-msg__quote {

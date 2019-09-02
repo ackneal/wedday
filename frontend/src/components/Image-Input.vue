@@ -1,7 +1,7 @@
 <template>
   <div :class="classObject" @click="upload">
     <img v-if="source" :src="source">
-    <label v-else>點擊上傳照片</label>
+    <label v-else>點擊分享你/妳在婚禮的照片</label>
     <input type="file" accept="image/*" @change="preview" ref="input" style="display:none;"/>
   </div>
 </template>
