@@ -1,5 +1,3 @@
-@import '~dialog-polyfill/dialog-polyfill.css';
-
 body::before {
   background-size: cover;
   background-image: url('https://storage.googleapis.com/cosmos-369.appspot.com/wedday/static/bg.cp.jpg');
@@ -77,51 +75,42 @@ h3.w-card-msg__quote:after {
   content: '”';
 }
 
-@media only screen and (max-width: 767px) {
-  .w-dialog .mdl-dialog {
-    padding: 50px 0;
-    height: 100vh;
-    width: 100vw !important;
-    overflow-y: auto;
-  }
-}
-
 @media only screen and (max-width: 375px) {
-  .w-dialog .w-input-image > img {
+  .w-input-image > img {
     max-height: 45vh;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .w-dialog .w-input-image > img {
+  .w-input-image > img {
     max-height: 35vh;
+    width: 50%;
   }
 }
 
-.w-dialog > div {
-  position: fixed;
-  top: 0px;
-  z-index: 9999999;
+@media only screen and (min-width: 986px) {
+  .w-new > div {
+    max-width: 60%;
+  }
 }
 
-.w-dialog .mdl-dialog {
-  top: 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width: 80%;
-  max-width: 900px;
-}
-
-dialog:not([open]) {
-  display: none !important;
-}
-
-.w-dialog .mdl-dialog > div {
+.w-new {
+  margin: 10px 0;
+  padding: 0px !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   width: 100%;
 }
 
-.w-dialog .w-input-image {
+.w-new > div {
+  margin: 0;
+  padding: 20px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.w-input-image {
   text-align: center;
   border-radius: 15px;
   width: 100%;
@@ -129,12 +118,12 @@ dialog:not([open]) {
   margin: 20px 0;
 }
 
-.w-dialog .w-input-image.no-image{
+.w-input-image.no-image{
   border: 2px dashed #ddd;
   line-height: 200px;
 }
 
-.w-dialog .w-input-image > img {
+.w-input-image > img {
   object-fit: cover;
   max-height: 50vh;
   width: 100%;
@@ -142,9 +131,14 @@ dialog:not([open]) {
   border-radius: 15px;
 }
 
-.w-dialog .mdl-textfield {
+.mdl-textfield {
   display: block;
   width: 100%;
+}
+
+.w-new button {
+  margin: 0 5px 20px;
+  float: right;
 }
 
 button.w-open-button {

@@ -11,7 +11,8 @@
         <div class="mdl-spinner mdl-js-spinner is-active"></div>
       </div>
     </div>
-    <Dialog />
+
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white w-open-button" @click="goToNew">留言給新人祝福</button>
   </main>
 </template>
 
@@ -19,13 +20,11 @@
 
 import { mapState, mapActions } from 'vuex'
 import Card from './Card.vue'
-import Dialog from './Dialog.vue'
 
 export default {
   name: 'Index',
   components: {
     Card,
-    Dialog
   },
   data: () => ({
     has_more: true,
@@ -50,6 +49,9 @@ export default {
       if (loading && this.has_more) {
         this.getCards()
       }
+    },
+    goToNew: function () {
+      this.$router.replace('/new')
     }
   },
   created() {
