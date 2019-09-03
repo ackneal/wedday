@@ -6,11 +6,11 @@
       </div>
       <form>
         <image-input :image.sync="image" :is-invalid="invalidImage"/>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" :class="{ 'is-invalid': name.invalid }">
+        <div class="mdl-textfield mdl-js-textfield" :class="{ 'is-invalid': name.invalid }">
           <input class="mdl-textfield__input" type="text" v-model="name.value">
           <label class="mdl-textfield__label">留下你的名字吧</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" :class="{ 'is-invalid': message.invalid }">
+        <div class="mdl-textfield mdl-js-textfield" :class="{ 'is-invalid': message.invalid }">
           <textarea class="mdl-textfield__input" type="text" rows="3" v-model="message.value"></textarea>
           <label class="mdl-textfield__label">我想大聲說...</label>
         </div>
