@@ -144,6 +144,18 @@ h3.w-card-msg__quote:after {
   float: right;
 }
 
+.w-buttom-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-buttom-submit .mdl-spinner {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
 button.w-open-button {
   position: fixed;
   display: block;

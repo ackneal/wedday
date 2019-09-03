@@ -16,10 +16,12 @@
         </div>
       </form>
        <div class="mdl-card__actions">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" @click="submit">
-          送出
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect w-buttom-submit" @click="submit" :disabled="submitting">
+          <div v-show="submitting" class="mdl-spinner mdl-js-spinner mdl-spinner--single-color is-active"></div>
+          <span v-if="submitting">送出中...</span>
+          <span v-else>送出</span>
         </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="backToIndex">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" @click="backToIndex" :disabled="submitting">
           等等再來
         </button>
       </div>
@@ -48,6 +50,7 @@ export default {
     },
     image: null,
     invalidImage: false,
+    submitting: false,
   }),
   methods: {
     ...mapActions(['card/create']),
@@ -59,6 +62,8 @@ export default {
       if (this.name.invalid || this.message.invalid || this.invalidImage) {
         return
       }
+
+      this.submitting = true
 
       return this['card/create']({
         name: this.name.value,
