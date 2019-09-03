@@ -32,7 +32,8 @@ body .wedday {
 }
 
 .w-headline {
-  background-image: url('../assets/headline.jpg');
+  background-image: url('../assets/headline.jpg') !important;
+  background-size: cover !important;
 }
 
 .w-card-img {
@@ -185,9 +186,11 @@ button.w-open-button {
 }
 
 .wedday .mdl-card__media {
-  box-sizing: border-box;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-image: url(https://storage.googleapis.com/cosmos-369.appspot.com/wedday/static/loading.gif);
   background-color: white;
+  box-sizing: border-box;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
