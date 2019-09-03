@@ -8,7 +8,7 @@
               <h2 >{{ card.message }}</h2>
               <h3>From {{ card.name }}</h3>
             </div>
-            <img class="swiper-img" :src="'https://storage.googleapis.com/cosmos-369.appspot.com/' + card.image">
+            <img class="swiper-img" :src="'//images.weserv.nl/?url=storage.googleapis.com/cosmos-369.appspot.com/' + card.image + '&w=1280&&maxage=31d'">
           </div>
         </template>
       </div>

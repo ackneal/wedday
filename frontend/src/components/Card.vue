@@ -43,7 +43,7 @@ export default {
       return new Date(this.created_at * 1000).toTimeString().slice(0, 5) + ' '
     },
     imageUrl: function () {
-      return (this.image) ? `https://storage.googleapis.com/cosmos-369.appspot.com/${this.image}` : '';
+      return (this.image) ? `//images.weserv.nl/?url=storage.googleapis.com/cosmos-369.appspot.com/${this.image}&w=1280&maxage=31d` : '';
     },
   },
 }
