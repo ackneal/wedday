@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from './components/Index.vue'
-import Slide from './components/Slide.vue'
-import Create from './components/Create.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/slide', component: Slide },
-  { path: '/new', component: Create },
-  { path: '*', component: Index }
+  { path: '/slide', component: () => import('./components/Slide.vue') },
+  { path: '/new', component: () => import('./components/Create.vue') },
+  { path: '*', component: () => import('./components/Index.vue') }
 ]
 
 export default new VueRouter({
