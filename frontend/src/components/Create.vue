@@ -92,6 +92,7 @@ export default {
   },
   mounted() {
     this.initial()
+    window.componentHandler.upgradeDom()
   }
 }
 </script>
