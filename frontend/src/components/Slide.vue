@@ -1,9 +1,9 @@
 <template>
-  <main class="slider_container">
+  <main class="w-slice slider_container">
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <template v-for="(card, index) in cards">
-          <div class="swiper-slide" :id="index">
+          <div class="w-slice-slide swiper-slide" :id="index">
             <div class="swiper-message" style="max-width: 25%;">
               <h2 >{{ card.message }}</h2>
               <h3>From {{ card.name }}</h3>

@@ -289,23 +289,23 @@ button.w-open-button {
   display: flex !important;
 }
 
-.swiper-container {
+.w-slice .swiper-container {
   width: 100wh;
   height: 100vh;
   background-color: black;
 }
 
-.swiper-slide {
+.w-slice-slide {
   display: flex;
 }
 
-.swiper-slide .swiper-img {
+.w-slice-slide .swiper-img {
   height: auto;
   width: 70%;
   object-fit: contain;
 }
 
-.swiper-slide .swiper-message {
+.w-slice-slide .swiper-message {
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -316,6 +316,6 @@ button.w-open-button {
   color: white;
 }
 
-.swiper-slide .swiper-message h4 {
+.w-slice-slide .swiper-message h4 {
   text-align: right;
 }
