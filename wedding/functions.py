@@ -4,9 +4,6 @@ from google.cloud import storage
 def upload_file(file):
     filename, file_extension = os.path.splitext(file.filename)
 
-    if file_extension not in ['.png', '.jpg', '.git']:
-        raise TypeError('只接受圖片檔')
-
     storage_client = storage.Client()
     bucket = storage_client.get_bucket('cosmos-369.appspot.com')
 
