@@ -5,7 +5,7 @@
         <div class="w-headline mdl-card__media mdl-color-text--grey-50"></div>
       </div>
       <template v-for="card in cards">
-        <card v-bind="card" />
+        <card v-bind="card" :col="6" />
       </template>
       <div v-if="loading" class="w-loading mdl-cell mdl-cell--12-col">
         <div class="mdl-spinner mdl-js-spinner is-active"></div>

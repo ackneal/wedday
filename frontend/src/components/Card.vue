@@ -1,5 +1,5 @@
 <template>
-  <div class="mdl-card mdl-cell mdl-cell--6-col">
+  <div class="mdl-card mdl-cell" :class="column">
     <div class="mdl-card__media mdl-color-text--grey-50">
       <img v-show="image" class="w-card-img" :src="imageUrl">
       <h3 v-if="!image" class="w-card-msg__quote">{{ message }}</h3>
@@ -26,6 +26,7 @@ export default {
     message: String,
     image: String,
     created_at: Number,
+    col: Number,
   },
   computed: {
     publishAt: function () {
@@ -45,6 +46,9 @@ export default {
     imageUrl: function () {
       return (this.image) ? `//images.weserv.nl/?url=storage.googleapis.com/cosmos-369.appspot.com/${this.image}&w=1280&maxage=31d` : '';
     },
+    column: function () {
+      return `mdl-cell--${this.col}-col`
+    }
   },
 }
 </script>
