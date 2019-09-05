@@ -26,9 +26,10 @@ const state = {
 }
 
 const getters = {
-  //
+  shuffle (state) {
+    return state.list.sort(() => Math.random() - 0.5)
+  }
 }
-
 const actions = {
   getMany({ commit, state }, limit) {
     var query = {
