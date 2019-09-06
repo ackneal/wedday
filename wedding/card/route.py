@@ -52,8 +52,11 @@ def store():
         return jsonify({'error': True, 'message': '檔案上傳失敗'}), 500
 
     card = Cards(name = form['name'], message = form['message'], image = file_path)
-    db.session.add(card)
-    db.session.commit()
+    try:
+        db.session.add(card)
+        db.session.commit()
+    except:
+        return jsonify({'error': True, 'message': '留言失敗'}), 500
 
     return jsonify({'error': False, 'data': card.to_dict()})
 
