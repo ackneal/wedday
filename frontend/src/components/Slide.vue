@@ -18,7 +18,7 @@
 
 <script>
 
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Slice',
@@ -26,9 +26,9 @@ export default {
     swiper: null,
   }),
   computed: {
-    ...mapState({
-      cards: state => state.card.list
-    })
+    ...mapGetters({
+      cards: 'card/shuffle',
+    }),
   },
   methods: {
     ...mapActions([
@@ -46,9 +46,7 @@ export default {
       })
     },
     loadCards: function () {
-      this['card/getMany'](100).then((ret) => {
-        this.initialSwiper()
-      })
+      this['card/getMany'](100).then(() => this.initialSwiper())
     }
   },
   mounted() {
