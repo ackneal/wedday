@@ -319,3 +319,50 @@ button.w-open-button {
 .w-slice-slide .swiper-message h4 {
   text-align: right;
 }
+
+.w-lottery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.w-lottery .mdl-grid {
+  width: 100%;
+}
+
+.w-lottery-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 300px;
+}
+
+.w-lottery-container .swiper-slide {
+  width: 300px !important;
+  height: 300px;
+}
+
+.w-lottery-container .swiper-slide > img{
+  opacity: 0.9;
+}
+
+.w-lottery-block {
+  margin-top: 20px;
+  padding: 10px;
+  background-color:white;
+  border-radius:10px;
+  text-align: center;
+}
+
+.w-lottery-buttom {
+  width: 60%;
+}
+
+.w-lottery-input {
+  font-size: 1.5em;
+}
+
+.w-lottery-input + .mdl-textfield__label {
+  font-size: 1.2em;
+}

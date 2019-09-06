@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '/lottery', component: () => import('./components/Lottery.vue') },
   { path: '/slide', component: () => import('./components/Slide.vue') },
   { path: '/new', component: () => import('./components/Create.vue') },
   { path: '*', component: () => import('./components/Index.vue') }
