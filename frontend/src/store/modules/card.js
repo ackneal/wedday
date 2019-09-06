@@ -19,15 +19,26 @@ const client = {
     .then(callback)
     .catch(errCallback)
   },
+  lottery: function (query, callback, errCallback) {
+    var qs = require('qs');
+    return fetch('/api/card?' + qs.stringify(query))
+      .then(res => { return res.json() })
+      .then(callback)
+      .catch(errCallback)
+  }
 }
 
 const state = {
   list: [],
+  luck: [],
 }
 
 const getters = {
   shuffle (state) {
     return state.list.sort(() => Math.random() - 0.5)
+  },
+  lottery (state) {
+    return state.luck
   }
 }
 const actions = {
@@ -58,6 +69,13 @@ const actions = {
 
     commit('splice', { index, card })
   },
+  getLottery ({ commit }, limit) {
+    commit('assignLuck', [])
+    var query = {
+      limit: limit
+    }
+    return client.lottery(query, (res) => commit('assignLuck', res.data))
+  }
 }
 
 const mutations = {
@@ -70,6 +88,9 @@ const mutations = {
   splice (state, { index, card }) {
     state.list.splice(index, 0, card)
   },
+  assignLuck (state, cards) {
+    state.luck = cards
+  }
 }
 
 export default {
