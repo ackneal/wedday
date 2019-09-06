@@ -11,7 +11,7 @@ manual_scaling:
 
 env_variables:
   SQLALCHEMY_DATABASE_URI: >-
-    mysql+pymysql://wedday:weddaysecret@/wedday?unix_socket=/cloudsql/cosmos-369:asia-east1:wedday-db?charset=utf8mb4
+    mysql+pymysql://wedday:weddaysecret@/wedday?unix_socket=/cloudsql/cosmos-369:asia-east1:wedday-db&charset=utf8mb4
 
 beta_settings:
   cloud_sql_instances: cosmos-369:asia-east1:wedday-db
